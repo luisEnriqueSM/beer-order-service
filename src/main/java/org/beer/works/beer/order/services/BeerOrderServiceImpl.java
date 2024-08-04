@@ -18,14 +18,14 @@ public class BeerOrderServiceImpl implements BeerOrderService{
 
     private final BeerOrderRepository beerOrderRepository;
     private final CustomerRepository customerRepository;
-    //private final BeerOrderMapper beerOrderMapper;
+    private final BeerOrderMapper beerOrderMapper;
     private final ApplicationEventPublisher publisher;
 
     public BeerOrderServiceImpl(BeerOrderRepository beerOrderRepository, CustomerRepository customerRepository,
-                                ApplicationEventPublisher publisher) {
+                                BeerOrderMapper beerOrderMapper,ApplicationEventPublisher publisher) {
         this.beerOrderRepository = beerOrderRepository;
         this.customerRepository = customerRepository;
-        //this.beerOrderMapper = beerOrderMapper;
+        this.beerOrderMapper = beerOrderMapper;
         this.publisher = publisher;
     }
 
