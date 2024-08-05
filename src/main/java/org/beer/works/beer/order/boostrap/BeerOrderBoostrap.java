@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.beer.works.beer.order.domain.Customer;
 import org.beer.works.beer.order.repositories.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @RequiredArgsConstructor
+@Component
 public class BeerOrderBoostrap implements CommandLineRunner {
 
     public static final String TASTING_ROOM = "Tasting Room";
