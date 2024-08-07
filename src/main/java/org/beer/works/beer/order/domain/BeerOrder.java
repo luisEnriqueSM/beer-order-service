@@ -15,8 +15,8 @@ import java.sql.Timestamp;
 import java.util.Set;
 import java.util.UUID;
 
-@Setter
 @Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class BeerOrder extends BaseEntity{
@@ -34,15 +34,14 @@ public class BeerOrder extends BaseEntity{
     private String orderStatusCallbackUrl;
 
     @Builder
-    public BeerOrder(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate,
-                     String customRef, Customer customer, Set<BeerOrderLine> beerOrderLines, OrderStatusEnum orderStatus,
-                     String orderStatusCallbackUrl){
+    public BeerOrder(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate, String customerRef,
+                     Customer customer, Set<BeerOrderLine> beerOrderLines, OrderStatusEnum orderStatus,
+                     String orderStatusCallbackUrl) {
         super(id, version, createdDate, lastModifiedDate);
-        this.customerRef = customRef;
+        this.customerRef = customerRef;
         this.customer = customer;
         this.beerOrderLines = beerOrderLines;
         this.orderStatus = orderStatus;
         this.orderStatusCallbackUrl = orderStatusCallbackUrl;
     }
-
 }
