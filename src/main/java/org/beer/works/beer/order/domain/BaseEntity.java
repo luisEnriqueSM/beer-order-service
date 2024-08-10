@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.*;
 
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.util.UUID;
 
 @Setter
@@ -17,7 +18,8 @@ public class BaseEntity {
 
     @Id
     @GeneratedValue
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
+    @JdbcTypeCode(Types.VARCHAR)
+    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
     private UUID id;
 
     @Version
